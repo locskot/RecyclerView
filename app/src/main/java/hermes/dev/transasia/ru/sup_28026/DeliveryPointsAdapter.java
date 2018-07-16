@@ -31,13 +31,13 @@ public class DeliveryPointsAdapter extends RecyclerView.Adapter<ViewHolder> {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
         if (viewType == VISITED) {
-            rootView = inflater.inflate(R.layout.vh_visited_point, parent, false);
+            rootView = inflater.inflate(R.layout.vh_delivery_point_visited, parent, false);
             viewHolder = new VisitedPointVH(rootView);
         } else if (viewType == NOT_VISITED) {
-            rootView = inflater.inflate(R.layout.vh_not_visited_point, parent, false);
+            rootView = inflater.inflate(R.layout.vh_delivery_point_not_visited, parent, false);
             viewHolder = new VisitedPointVH(rootView);
         } else {
-            rootView = inflater.inflate(R.layout.vh_header, parent, false);
+            rootView = inflater.inflate(R.layout.vh_delivery_point_header, parent, false);
             viewHolder = new HeaderVH(rootView);
         }
         return viewHolder;
