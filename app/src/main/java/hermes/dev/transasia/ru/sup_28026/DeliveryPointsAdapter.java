@@ -34,10 +34,10 @@ public class DeliveryPointsAdapter extends RecyclerView.Adapter<ViewHolder> {
             rootView = inflater.inflate(R.layout.vh_visited_point, parent, false);
             viewHolder = new VisitedPointVH(rootView);
         } else if (viewType == NOT_VISITED) {
-            rootView = inflater.inflate(R.layout.vh_visited_not_point, parent, false);
+            rootView = inflater.inflate(R.layout.vh_not_visited_point, parent, false);
             viewHolder = new VisitedPointVH(rootView);
         } else {
-            rootView = inflater.inflate(R.layout.vh_visited_header, parent, false);
+            rootView = inflater.inflate(R.layout.vh_header, parent, false);
             viewHolder = new HeaderVH(rootView);
         }
         return viewHolder;
@@ -47,29 +47,29 @@ public class DeliveryPointsAdapter extends RecyclerView.Adapter<ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         if (holder.getItemViewType() == VISITED) {
             VisitedPointVH vh1 = (VisitedPointVH) holder;
-            configureViewHolder1(vh1, position);
+            bindVisited(vh1, position);
         } else if (holder.getItemViewType() == NOT_VISITED) {
             VisitedPointVH vh2 = (VisitedPointVH) holder;
-            configureViewHolder2(vh2, position);
+            bindNotVisited(vh2, position);
         } else {
             HeaderVH vh3 = (HeaderVH) holder;
-            configureViewHolder3(vh3, position);
+            bindHeader(vh3, position);
         }
     }
 
-    private void configureViewHolder1(VisitedPointVH vh1, int position) {
+    private void bindVisited(VisitedPointVH holder, int position) {
         DeliveryPoint point = (DeliveryPoint) points.get(position);
-        vh1.tvName.setText(point.getName());
+        holder.tvName.setText(point.getName());
     }
 
-    private void configureViewHolder2(VisitedPointVH vh2, int position) {
+    private void bindNotVisited(VisitedPointVH holder, int position) {
         DeliveryPointNotVisited point = (DeliveryPointNotVisited) points.get(position);
-        vh2.tvName.setText(point.getName());
+        holder.tvName.setText(point.getName());
     }
 
-    private void configureViewHolder3(HeaderVH vh3, int position) {
+    private void bindHeader(HeaderVH holder, int position) {
         Header point = (Header) points.get(position);
-        vh3.tvTitle.setText(point.getTitle());
+        holder.tvTitle.setText(point.getTitle());
     }
 
     @Override

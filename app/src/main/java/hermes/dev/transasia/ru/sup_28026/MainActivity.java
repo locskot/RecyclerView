@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         list.add(new DeliveryPointNotVisited("store 2", 2));
         list.add(new DeliveryPointNotVisited("store 3", 3));
         list.add(new DeliveryPointNotVisited("store 4", 4));
-        list.add(new DeliveryPointNotVisited("store 5", 4));
-        list.add(new DeliveryPointNotVisited("store 6", 4));
+        list.add(new DeliveryPointNotVisited("store 5", 5));
+        list.add(new DeliveryPointNotVisited("store 6", 6));
         return list;
     }
 
