@@ -10,7 +10,6 @@ public class HeaderVH extends RecyclerView.ViewHolder {
 
     public TextView tvTitle;
 
-
     public HeaderVH(View itemView) {
         super(itemView);
         initView(itemView);

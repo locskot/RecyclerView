@@ -10,7 +10,6 @@ import hermes.dev.transasia.ru.sup_28026.R;
 
 public class NotVisitedPointVH extends RecyclerView.ViewHolder {
 
-
     public View viewDividerSide;
     public TextView tvId;
     public TextView tvName;

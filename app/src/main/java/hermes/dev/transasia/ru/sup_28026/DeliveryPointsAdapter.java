@@ -14,6 +14,7 @@ import hermes.dev.transasia.ru.sup_28026.model.DeliveryPointNotVisited;
 import hermes.dev.transasia.ru.sup_28026.model.DevPoint;
 import hermes.dev.transasia.ru.sup_28026.model.Header;
 import hermes.dev.transasia.ru.sup_28026.vh.HeaderVH;
+import hermes.dev.transasia.ru.sup_28026.vh.NotVisitedPointVH;
 import hermes.dev.transasia.ru.sup_28026.vh.VisitedPointVH;
 
 public class DeliveryPointsAdapter extends RecyclerView.Adapter<ViewHolder> {
@@ -35,7 +36,7 @@ public class DeliveryPointsAdapter extends RecyclerView.Adapter<ViewHolder> {
             viewHolder = new VisitedPointVH(rootView);
         } else if (viewType == NOT_VISITED) {
             rootView = inflater.inflate(R.layout.vh_delivery_point_not_visited, parent, false);
-            viewHolder = new VisitedPointVH(rootView);
+            viewHolder = new NotVisitedPointVH(rootView);
         } else {
             rootView = inflater.inflate(R.layout.vh_delivery_point_header, parent, false);
             viewHolder = new HeaderVH(rootView);
@@ -49,7 +50,7 @@ public class DeliveryPointsAdapter extends RecyclerView.Adapter<ViewHolder> {
             VisitedPointVH vh1 = (VisitedPointVH) holder;
             bindVisited(vh1, position);
         } else if (holder.getItemViewType() == NOT_VISITED) {
-            VisitedPointVH vh2 = (VisitedPointVH) holder;
+            NotVisitedPointVH vh2 = (NotVisitedPointVH) holder;
             bindNotVisited(vh2, position);
         } else {
             HeaderVH vh3 = (HeaderVH) holder;
@@ -62,7 +63,7 @@ public class DeliveryPointsAdapter extends RecyclerView.Adapter<ViewHolder> {
         holder.tvName.setText(point.getName());
     }
 
-    private void bindNotVisited(VisitedPointVH holder, int position) {
+    private void bindNotVisited(NotVisitedPointVH holder, int position) {
         DeliveryPointNotVisited point = (DeliveryPointNotVisited) points.get(position);
         holder.tvName.setText(point.getName());
     }
